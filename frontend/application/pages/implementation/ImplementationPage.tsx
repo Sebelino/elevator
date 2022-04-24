@@ -12,17 +12,14 @@ export interface ElevatorLocation {
 class ImplementationPage extends React.Component {
 
     state = {
-        elevatorLocations: [
-            {elevatorNumber: 1, location: 2},
-            {elevatorNumber: 2, location: 1},
-        ],
+        elevatorLocations: [] as ElevatorLocation[],
     };
 
 
     handleCallElevator = () => {
-        this.setState({
-            elevatorLocations: [{elevatorNumber: 5, location: 7}],
-        });
+        fetch('http://localhost:3000/elevator')
+            .then(response => response.json())
+            .then(payload => this.setState({elevatorLocations: payload.elevators}));
     }
 
     public render() {
