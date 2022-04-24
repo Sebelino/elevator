@@ -10,7 +10,10 @@ const ElevatorState = ({elevatorLocations}: Props) => {
     return (
         <ul>
             {elevatorLocations.map(e => {
-                return <ElevatorItem elevatorLocation={e}/>;
+                return <ElevatorItem
+                    key={e.elevatorNumber}
+                    elevatorLocation={e}
+                />;
             })}
         </ul>
     );
