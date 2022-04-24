@@ -10,12 +10,12 @@ router.get("/elevator", (context) => {
     context.response.body = {
         elevators: [
             {
-                number: 1,
-                floor: 2,
+                elevatorNumber: 1,
+                location: 2,
             },
             {
-                number: 2,
-                floor: 1,
+                elevatorNumber: 2,
+                location: 1,
             }
         ]
     };
