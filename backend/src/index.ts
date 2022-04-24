@@ -16,7 +16,7 @@ function toElevator(n) {
 }
 
 function initialElevatorState() {
-    return [1, 2].map(n => toElevator(n));
+    return [...Array(2).keys()].map(n => toElevator(n + 1));
 }
 
 function distance(location, floorNumber) {
