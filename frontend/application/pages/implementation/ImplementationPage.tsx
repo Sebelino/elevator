@@ -1,8 +1,8 @@
 import * as React from "react";
 
 import * as css from "./ImplementationPage.module.scss";
-import ElevatorButton from "./components/ElevatorButton";
 import ElevatorState from "./components/ElevatorState";
+import ElevatorPanel from "./components/ElevatorPanel";
 
 export interface ElevatorLocation {
     elevatorNumber: number,
@@ -39,9 +39,7 @@ class ImplementationPage extends React.Component {
                 <h3 className={css.title}>Current state of elevators</h3>
                 <ElevatorState elevatorLocations={this.state.elevatorLocations}/>
                 <h3 className={css.title}>Which floor would you like to call an elevator to?</h3>
-                <ElevatorButton symbol={"1"} handleCallElevator={this.handleCallElevator}/>
-                <ElevatorButton symbol={"2"} handleCallElevator={this.handleCallElevator}/>
-                <ElevatorButton symbol={"3"} handleCallElevator={this.handleCallElevator}/>
+                <ElevatorPanel handleCallElevator={this.handleCallElevator}/>
             </>
         );
     }
