@@ -11,20 +11,26 @@ export interface ElevatorLocation {
 
 class ImplementationPage extends React.Component {
 
-    handleCallElevator = event => {
-        console.log("Calling elevator");
+    state = {
+        elevatorLocations: [
+            {elevatorNumber: 1, location: 2},
+            {elevatorNumber: 2, location: 1},
+        ],
+    };
+
+
+    handleCallElevator = () => {
+        this.setState({
+            elevatorLocations: [{elevatorNumber: 5, location: 7}],
+        });
     }
 
     public render() {
-        const elevatorLocations: ElevatorLocation[] = [
-            {elevatorNumber: 1, location: 2},
-            {elevatorNumber: 2, location: 1},
-        ];
         return (
             <>
                 <h2 className={css.title}>Elevator service</h2>
                 <h3 className={css.title}>Current state of elevators</h3>
-                <ElevatorState elevatorLocations={elevatorLocations}/>
+                <ElevatorState elevatorLocations={this.state.elevatorLocations}/>
                 <h3 className={css.title}>Which floor would you like to call an elevator to?</h3>
                 <ElevatorButton symbol={"1"} handleCallElevator={this.handleCallElevator}/>
                 <ElevatorButton symbol={"2"} handleCallElevator={this.handleCallElevator}/>
