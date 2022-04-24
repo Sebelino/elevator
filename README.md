@@ -15,5 +15,6 @@ May also be needed:
 
 ```bash
 npm install typescript -g
-npm install --prefix=backend
+npm install --prefix=./backend
+npm install --prefix=./frontend
 ```
