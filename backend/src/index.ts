@@ -7,7 +7,18 @@ const app = new Koa();
 const router = new Router();
 
 router.get("/elevator", (context) => {
-    context.response.body = { message: "Hello world" };
+    context.response.body = {
+        elevators: [
+            {
+                number: 1,
+                floor: 2,
+            },
+            {
+                number: 2,
+                floor: 1,
+            }
+        ]
+    };
     context.response.status = 200;
 });
 
