@@ -6,6 +6,8 @@ import * as Router from "koa-router";
 const app = new Koa();
 const router = new Router();
 
+const numberOfElevators = 5;
+
 const elevatorState = initialElevatorState();
 
 function toElevator(n) {
@@ -16,7 +18,7 @@ function toElevator(n) {
 }
 
 function initialElevatorState() {
-    return [...Array(5).keys()].map(n => toElevator(n + 1));
+    return [...Array(numberOfElevators).keys()].map(n => toElevator(n + 1));
 }
 
 function distance(location, floorNumber) {
