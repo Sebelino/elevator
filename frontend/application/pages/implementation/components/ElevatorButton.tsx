@@ -2,11 +2,12 @@ import * as React from "react";
 
 interface Props {
     symbol: string
+    handleCallElevator: any
 }
 
-const ElevatorButton = ({symbol}: Props) => {
+const ElevatorButton = ({symbol, handleCallElevator}: Props) => {
     return (
-        <button>{symbol}</button>
+        <button onClick={handleCallElevator}>{symbol}</button>
     );
 }
 

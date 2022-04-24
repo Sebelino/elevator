@@ -10,6 +10,11 @@ export interface ElevatorLocation {
 }
 
 class ImplementationPage extends React.Component {
+
+    handleCallElevator = event => {
+        console.log("Calling elevator");
+    }
+
     public render() {
         const elevatorLocations: ElevatorLocation[] = [
             {elevatorNumber: 1, location: 2},
@@ -21,9 +26,9 @@ class ImplementationPage extends React.Component {
                 <h3 className={css.title}>Current state of elevators</h3>
                 <ElevatorState elevatorLocations={elevatorLocations}/>
                 <h3 className={css.title}>Which floor would you like to call an elevator to?</h3>
-                <ElevatorButton symbol={"1"}/>
-                <ElevatorButton symbol={"2"}/>
-                <ElevatorButton symbol={"3"}/>
+                <ElevatorButton symbol={"1"} handleCallElevator={this.handleCallElevator}/>
+                <ElevatorButton symbol={"2"} handleCallElevator={this.handleCallElevator}/>
+                <ElevatorButton symbol={"3"} handleCallElevator={this.handleCallElevator}/>
             </>
         );
     }
