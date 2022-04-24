@@ -22,7 +22,21 @@ router.get("/elevator", (context) => {
     context.response.status = 200;
 });
 
-// Add additional routes for implementation here...
+router.post("/elevator", (context) => {
+    context.response.body = {
+        elevators: [
+            {
+                elevatorNumber: 1,
+                location: 3,
+            },
+            {
+                elevatorNumber: 2,
+                location: 1,
+            }
+        ]
+    };
+    context.response.status = 200;
+});
 
 app.use(bodyparser({
     enableTypes: ["json"],
