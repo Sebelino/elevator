@@ -6,7 +6,7 @@ interface Props {
 
 const ElevatorButton = ({symbol}: Props) => {
     return (
-        <div>This is an elevator button: {symbol}</div>
+        <button>{symbol}</button>
     );
 }
 
