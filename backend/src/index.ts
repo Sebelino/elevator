@@ -6,7 +6,9 @@ import * as Router from "koa-router";
 const app = new Koa();
 const router = new Router();
 
-router.get("/elevator", (context) => {
+router.get("/elevator", listElevators);
+
+async function listElevators(context) {
     context.response.body = {
         elevators: [
             {
@@ -20,7 +22,7 @@ router.get("/elevator", (context) => {
         ]
     };
     context.response.status = 200;
-});
+}
 
 router.post("/elevator", (context) => {
     context.response.body = {
