@@ -23,7 +23,12 @@ class ImplementationPage extends React.Component {
     }
 
     handleCallElevator = () => {
-        fetch('http://localhost:3000/elevator')
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({elevatorNumber: 3}),
+        };
+        fetch('http://localhost:3000/elevator', requestOptions)
             .then(response => response.json())
             .then(payload => this.setState({elevatorLocations: payload.elevators}));
     }
