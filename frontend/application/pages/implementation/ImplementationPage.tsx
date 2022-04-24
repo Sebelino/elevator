@@ -25,7 +25,7 @@ class ImplementationPage extends React.Component {
         const requestOptions = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({elevatorNumber: 3}),
+            body: JSON.stringify({floor: 3}),
         };
         fetch('http://localhost:3000/elevator', requestOptions)
             .then(response => response.json())
