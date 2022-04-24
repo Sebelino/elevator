@@ -26,11 +26,13 @@ async function listElevators(context) {
 }
 
 async function callElevator(context) {
+    /* tslint:disable:no-string-literal */
+    const floorNumber = context.request.body["floor"];
     context.response.body = {
         elevators: [
             {
                 elevatorNumber: 1,
-                location: 3,
+                location: floorNumber,
             },
             {
                 elevatorNumber: 2,
