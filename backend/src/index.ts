@@ -8,17 +8,15 @@ const router = new Router();
 
 const elevatorState = initialElevatorState();
 
+function toElevator(n) {
+    return {
+        elevatorNumber: n,
+        location: 1,
+    };
+}
+
 function initialElevatorState() {
-    return [
-        {
-            elevatorNumber: 1,
-            location: 2,
-        },
-        {
-            elevatorNumber: 2,
-            location: 1,
-        }
-    ];
+    return [1, 2].map(n => toElevator(n));
 }
 
 function distance(location, floorNumber) {
