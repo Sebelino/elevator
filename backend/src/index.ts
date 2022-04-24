@@ -6,8 +6,7 @@ import * as Router from "koa-router";
 const app = new Koa();
 const router = new Router();
 
-// This is just an example route
-router.get("/sample", (context) => {
+router.get("/elevator", (context) => {
     context.response.body = { message: "Hello world" };
     context.response.status = 200;
 });
