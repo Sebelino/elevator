@@ -51,7 +51,9 @@ async function callElevator(context) {
     /* tslint:disable:no-string-literal */
     const floorNumber = context.request.body["floor"];
     computeNewElevatorState(floorNumber);
-    context.response.body = elevatorState;
+    context.response.body = {
+        elevators: elevatorState
+    };
     context.response.status = 200;
 }
 
