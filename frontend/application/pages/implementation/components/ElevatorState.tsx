@@ -1,10 +1,17 @@
 import * as React from "react";
+import {ElevatorLocation} from "../ImplementationPage";
+import ElevatorItem from "./ElevatorItem";
 
-const ElevatorState = () => {
+interface Props {
+    elevatorLocations: ElevatorLocation[],
+}
+
+const ElevatorState = ({elevatorLocations}: Props) => {
     return (
         <ul>
-            <li>Elevator 1: 2</li>
-            <li>Elevator 2: 1</li>
+            {elevatorLocations.map(e => {
+                return <ElevatorItem elevatorLocation={e}/>;
+            })}
         </ul>
     );
 }
