@@ -9,6 +9,8 @@ class ImplementationPage extends React.Component {
             <>
                 <h2 className={css.title}>Lägg implementationen här</h2>
                 <ElevatorButton symbol={"1"}/>
+                <ElevatorButton symbol={"2"}/>
+                <ElevatorButton symbol={"3"}/>
             </>
         );
     }
