@@ -6,16 +6,20 @@ import * as Router from "koa-router";
 const app = new Koa();
 const router = new Router();
 
-const elevatorState = [
-    {
-        elevatorNumber: 1,
-        location: 2,
-    },
-    {
-        elevatorNumber: 2,
-        location: 1,
-    }
-];
+const elevatorState = initialElevatorState();
+
+function initialElevatorState() {
+    return [
+        {
+            elevatorNumber: 1,
+            location: 2,
+        },
+        {
+            elevatorNumber: 2,
+            location: 1,
+        }
+    ];
+}
 
 function distance(location, floorNumber) {
     return Math.abs(location - floorNumber);
