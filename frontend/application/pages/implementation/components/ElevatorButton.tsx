@@ -7,7 +7,7 @@ interface Props {
 
 const ElevatorButton = ({symbol, handleCallElevator}: Props) => {
     return (
-        <button onClick={handleCallElevator}>{symbol}</button>
+        <button onClick={() => handleCallElevator(symbol)}>{symbol}</button>
     );
 }
 
