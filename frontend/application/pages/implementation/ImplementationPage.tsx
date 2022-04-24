@@ -16,7 +16,6 @@ class ImplementationPage extends React.Component {
     };
 
     componentDidMount() {
-        console.log("componentDidMount");
         fetch('http://localhost:3000/elevator')
             .then(response => response.json())
             .then(payload => this.setState({elevatorLocations: payload.elevators}));
