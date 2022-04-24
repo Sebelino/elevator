@@ -11,3 +11,9 @@ Both the frontend and the backend has the following npm scripts
 * `npm run develop`
     * Runs the application locally
 
+May also be needed:
+
+```bash
+npm install typescript -g
+npm install --prefix=backend
+```
