@@ -9,10 +9,10 @@ const ElevatorPanel = ({handleCallElevator}: Props) => {
     return (
         <div>
             {
-                ["1", "2", "3"].map(symbol => {
+                [...Array(3).keys()].map(n => {
                     return (<ElevatorButton
-                        key={symbol}
-                        symbol={symbol}
+                        key={(n + 1).toString()}
+                        symbol={(n + 1).toString()}
                         handleCallElevator={handleCallElevator}
                     />)
                 })
